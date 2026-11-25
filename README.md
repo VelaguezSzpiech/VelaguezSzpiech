@@ -1,35 +1,40 @@
-# Hello, World! 👋🌍
+# Hey, I'm Velaguez 👋
 
-I'm a passionate full-stack developer who loves to explore new technologies! 🚀
+**AI Systems Engineer · Process Optimization & Automation · Local Inference Builder**
 
-## About Me 🙋‍♂️
+I build high-efficiency AI systems, custom automation pipelines, and bare-metal tooling. I started out in full-stack development, got hooked on squeezing every last drop of performance out of hardware I already own, and now spend most of my time at the intersection of **local AI infrastructure**, **agentic workflows**, and **process optimization**.
 
-- 🎓 I started as a front-end developer, but my curiosity led me to the back-end world, and now I'm a full-stack developer! 💻
-- 🧠 I enjoy working with a variety of technologies including **React**, **Node.js**, **Python**, and **Vite**.
-- 🤖 AI fascinates me and I love incorporating it into my projects.
-- 🕹️ In my spare time, you'll find me tinkering with **Nerves**.
-- 🌱 I'm always on the lookout for new technologies to learn and master. 
+---
 
-## My Tech Stack 🛠️
+## 🎯 What I Focus On
 
-AI 🤖 | Back-End 🏗️ | React ⚛️ | Node.js 🟩 | Python 🐍 | Vite ⚡ | Nerves 🕹️
+- **AI Integration & Automation** — Designing end-to-end workflows and agentic pipelines that remove manual bottlenecks and turn repetitive processes into fast, reliable systems.
+- **Bare-Metal Inference & Performance** — Writing low-level GPU kernels, optimizing memory bandwidth, and pushing local hardware way past stock baselines.
+- **Open-Source & Local-First Tooling** — Contributing to and building transparent, self-hosted tools so developers can own their stack and their weights.
+- **Process Optimization** — Auditing systems from top to bottom—whether it's an inference hot path or an operational workflow—to cut latency, waste, and overhead.
 
-## My Recent Project: Reverse Engineering YouTube's Trending Algorithm 📈🔍
+---
 
-In this project, I've delved into the world of web scraping and algorithm analysis to reverse engineer YouTube's trending topics algorithm. 
+## 🚀 Featured Project: [VegaJet](https://github.com/VelaguezSzpiech/vegajet)
 
-### Tech Stack 🛠️
+A bare-metal Linux `/dev/kfd` LLM inference engine built from scratch for AMD Instinct MI50 (`gfx906`) accelerators—zero ROCm runtime dependency.
 
-- **Node.js**: I used Node.js to scrape YouTube pages and create a server. This server stores the scraped data and serves it to the front-end.
-- **Express**: Express is being used to handle server-side operations.
-- **React**: The front-end of the application is built with React. It receives data from the Node.js server and presents it in a user-friendly format.
+- **Bare-Metal Architecture:** Direct `/dev/kfd` AQL queues, custom persistent `gfx906` kernels with 0 B register spills, and Push-Only Dual-BAR PCIe P2P AllReduce.
+- **Universal Load-Time Repacker:** Translates GGUF weights on load into native `gfx906` layouts (`v_dot4_i32_i8` / `v_dot8_i32_i4`) to maximize HBM2 saturation.
+- **Real-World Speed:** Running a 122B MoE (`Ornith-122B`) across 2× 32 GB MI50s at **~165 tok/s raw decode**, **311–357 tok/s** with lossless Hybrid speculative decoding on code, and **1,345+ tok/s prefill**.
+- **Drop-In Serving:** Native OpenAI- and Anthropic-compatible (`/v1/chat/completions` & `/v1/messages`) streaming server so existing clients and harnesses plug right in.
 
-### Key Features 🗝️
+---
 
-- **Web Scraping**: I scraped YouTube pages to gather data on various factors such as the video transcript, top comments, number of comments, likes, dislikes, video length, video thumbnail, video title, number of subscribers, total views of the YouTuber, and the duration of the YouTuber's presence on the platform.
-- **Data Analysis**: I used GPT-4 and GPT Vision to analyze the correlation between these factors. This analysis is key to understanding how YouTube's trending topics algorithm works.
-- **Reverse Engineering**: The ultimate goal was to reverse engineer the algorithm. This means figuring out the rules and patterns the algorithm uses to determine trending topics.
+## 🛠️ Building in the Background
 
-### Impact and Applications 💡
+- **Hermes & OMP Harnesses** — Developing custom orchestration and execution harnesses to wire local and frontier models into automated engineering and workflow pipelines.
+- **Multi-GPU Scaling & Universal Model Support** — Expanding VegaJet for 3×+ MI50 setups, broader GGUF architecture coverage, and zero-config hardware auto-tuning.
 
-This project could have a wide range of applications. For example, it could help content creators understand what type of content is more likely to trend, or it could be used for academic research into algorithms and social media.
+---
+
+## 🧰 Tech Stack
+
+- **Systems & Inference:** `C++` · `HIP / gfx906` · `Linux /dev/kfd` · `GGUF` · `Speculative Decoding`
+- **AI & Automation:** `Local LLMs` · `AI Integration` · `Agentic Harnesses (Hermes / OMP)` · `Workflow & Process Optimization`
+- **Full-Stack & Scripting:** `Python` · `Node.js` · `TypeScript` · `React` · `Vite`
